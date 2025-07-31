@@ -1,0 +1,196 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.contact {
+  min-height: 534px;
+  margin: clamp(60px, 8vw, 112px) 0 clamp(70px, 10vw, 136px);
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // gap: clamp(20px, 3vw, 60px);
+    padding: clamp(16px, 4vw, 24px);
+  }
+
+  &__info,
+  &__form {
+    flex: 1 1 48%;
+    max-width: 48%;
+  }
+
+  &__info {
+    &-process {
+      font-size: clamp(12px, 1.5vw, 16px);
+      padding: 3px 15px;
+      background: $main-color;
+      border-radius: 20px;
+      width: max-content;
+      text-transform: uppercase;
+      font-family: Lato;
+      letter-spacing: 0.1em;
+    }
+
+    &-title {
+      margin-top: 6px;
+      font-size: clamp(26px, 5vw, 45px);
+      font-family: Cabin;
+      font-weight: 700;
+      color: $dark-color;
+      line-height: 116%;
+    }
+
+    &-subtitle {
+      margin-top: 13px;
+      font-size: clamp(14px, 2vw, 16px);
+      color: $description-text;
+      font-family: Lato;
+      line-height: 147.5%;
+    }
+
+    &-list {
+      margin-top: clamp(20px, 4vw, 38px);
+    }
+
+    &-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: clamp(20px, 5vw, 56px);
+    }
+
+    &-icon {
+      width: 53px;
+      height: 53px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgb(255, 236, 187);
+      flex-shrink: 0;
+    }
+
+    &-item:nth-child(2) &-icon {
+      background: rgb(164, 237, 164);
+    }
+
+    &-item:nth-child(3) &-icon {
+      background: rgb(234, 234, 234);
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &-label {
+      font-size: clamp(13px, 1.6vw, 16px);
+      color: $description-text;
+      font-family: Lato;
+    }
+
+    &-link {
+      font-size: clamp(16px, 2vw, 20px);
+      color: $dark-color;
+      font-family: Cabin;
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(10px, 3vw, 24px);
+
+    &-label {
+      width: 100%;
+      font-size: clamp(14px, 1.8vw, 16px);
+      font-family: Lato;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: clamp(16px, 4vw, 28px);
+
+      &:has(textarea) {
+        width: 100%;
+      }
+
+      @media (min-width: 768px) {
+        width: calc(50% - clamp(6px, 1.5vw, 12px));
+
+        &:has(textarea) {
+          width: 100%;
+        }
+      }
+    }
+
+    &-input {
+      border: 1px solid $label-block;
+      border-radius: 54px;
+      background: $light-text;
+      padding: 16px clamp(20px, 0vw, 33px);
+      font-size: clamp(14px, 1.6vw, 16px);
+      height: clamp(50px, 7vh, 68px);
+      margin-top: 10px;
+
+      &:focus {
+        outline: 1px solid $main-color;
+      }
+    }
+
+    &-textarea {
+      border: 1px solid $label-block;
+      border-radius: 22px;
+      background: $light-text;
+      resize: none;
+      height: clamp(120px, 20vh, 157px);
+      padding: 22px clamp(20px, 5vw, 33px);
+      margin-top: 10px;
+
+      &:focus {
+        outline: 1px solid $main-color;
+      }
+    }
+
+    &-button {
+      width: clamp(140px, 20vw, 168px);
+      height: clamp(45px, 8vh, 61px);
+      font-size: clamp(14px, 2vw, 18px);
+      font-family: Lato;
+      font-weight: 600;
+      border-radius: 42px;
+      background: $dark-color;
+      color: $light-text;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:active {
+        background: $main-color;
+        color: $dark-color;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__info,
+    &__form {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+}

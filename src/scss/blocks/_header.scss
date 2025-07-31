@@ -1,0 +1,53 @@
+.header {
+  background: $dark-color;
+  border-radius: 30px;
+  padding: clamp(16px, 4vw, 31px) clamp(20px, 6vw, 44px);
+  margin: clamp(30px, 5vw, 90px) clamp(16px, 6vw, 87px) 0;
+  height: auto;
+
+  &__menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(8px, 2vw, 30px); 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__menu-item {
+    flex: 0 1 auto;
+  }
+
+  &__menu-link {
+    position: relative;
+    color: $light-text;
+    font-family: Cabin;
+    font-size: clamp(14px, 2.2vw, 25px); 
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background-color: $main-color;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    &--active {
+      color: $main-color;
+      transform: translateY(-2px);
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
